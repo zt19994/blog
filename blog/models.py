@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
+
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -11,12 +14,18 @@ class Category(models.Model):
     """
     name = models.CharField(max_length=100)
 
+    def __str__(self):
+        return self.name
+
 
 class Tag(models.Model):
     """
     标签：和category一样
     """
     name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
 
 
 class Post(models.Model):
@@ -53,3 +62,6 @@ class Post(models.Model):
 
     # 作者和文章可以一对多
     author = models.ForeignKey(User)
+
+    def __str__(self):
+        return self.title
