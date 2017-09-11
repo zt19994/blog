@@ -55,7 +55,7 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],  # 告诉django模板的位置，添加os.path.join(BASE_DIR, 'templates')
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
